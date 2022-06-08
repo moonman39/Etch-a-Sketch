@@ -25,9 +25,9 @@ button.addEventListener("click", () => {
   userChoice = prompt(
     "How many dimensions do you want on each side of the box?"
   );
-  while (userChoice > 40 || userChoice < 1) {
+  while (userChoice > 31 || userChoice < 1) {
     userChoice = prompt(
-      "How many dimensions do you want on each side of the box? (Min is 1 Max is 100)"
+      "How many dimensions do you want on each side of the box? (Min is 1 Max is 30)"
     );
   }
 
@@ -55,4 +55,10 @@ button.addEventListener("click", () => {
   });
 });
 
-// A function to change the color of the sketch to black
+// A function to clear the sketch
+const clear = document.querySelector(".clear");
+clear.addEventListener("click", () => {
+  box.forEach((box) => {
+    box.classList.remove("black-background");
+  });
+});

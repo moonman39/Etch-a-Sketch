@@ -19,12 +19,16 @@ h1 {
 }
 
 .user-choice {
-  margin: 0 auto;
   display: block;
-  margin-bottom: 20px;
   font-size: 20px;
   padding: 5px;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.user-choice:active,
+.user-choice:hover {
+  box-shadow: 1px 1px 5px 2px black;
 }
 
 .sketch-container {
@@ -57,4 +61,29 @@ h1 {
   margin-right: auto;
   width: 500px;
   height: 500px;
+}
+
+.clear {
+  display: block;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 50px;
+}
+
+.clear:active,
+.clear:hover {
+  box-shadow: 1px 1px 5px 2px black;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 500px;
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
