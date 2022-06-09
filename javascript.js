@@ -7,11 +7,20 @@ const defaultGrid = () => {
 };
 defaultGrid();
 
+// A variable to get a random number between 0 and 255 for rgb
+const rgb = () => {
+  let number = Math.floor(Math.random() * 256);
+  return number;
+};
+
 // A function to change the color of the sketch to black
 let box = Array.from(document.querySelectorAll(".box"));
 box.forEach((box) => {
+  // box.addEventListener("mouseover", () => {
+  //   box.classList.add("black-background");
+  // });
   box.addEventListener("mouseover", () => {
-    box.classList.add("black-background");
+    box.style["background-color"] = `rgb(${rgb()}, ${rgb()}, ${rgb()})`;
   });
 });
 // Allowing the user to change the size of the box
@@ -50,7 +59,7 @@ button.addEventListener("click", () => {
   box = document.querySelectorAll(".box");
   box.forEach((box) => {
     box.addEventListener("mouseover", () => {
-      box.classList.add("black-background");
+      box.style["background-color"] = `rgb(${rgb()}, ${rgb()}, ${rgb()})`;
     });
   });
 });
@@ -59,6 +68,6 @@ button.addEventListener("click", () => {
 const clear = document.querySelector(".clear");
 clear.addEventListener("click", () => {
   box.forEach((box) => {
-    box.classList.remove("black-background");
+    box.style["background-color"] = "white";
   });
 });
