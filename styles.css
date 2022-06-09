@@ -18,7 +18,10 @@ h1 {
   margin-bottom: 20px;
 }
 
-.user-choice {
+.user-choice,
+.clear,
+.color,
+.black {
   display: block;
   font-size: 20px;
   padding: 5px;
@@ -27,7 +30,13 @@ h1 {
 }
 
 .user-choice:active,
-.user-choice:hover {
+.user-choice:hover,
+.clear:active,
+.clear:hover,
+.color:hover,
+.color:active,
+.black:hover,
+.black:active {
   box-shadow: 1px 1px 5px 2px black;
 }
 
@@ -44,8 +53,7 @@ h1 {
   height: 500px;
 }
 
-.box,
-.new-box {
+.box {
   background-color: white;
 }
 
@@ -63,23 +71,10 @@ h1 {
   height: 500px;
 }
 
-.clear {
-  display: block;
-  font-size: 20px;
-  padding: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  height: 50px;
-}
-
-.clear:active,
-.clear:hover {
-  box-shadow: 1px 1px 5px 2px black;
-}
-
 .buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 10px;
   width: 500px;
   justify-content: center;
