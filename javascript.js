@@ -6,6 +6,7 @@ const defaultGrid = () => {
   }
 };
 defaultGrid();
+let boxColor = "black";
 
 // Changing the box backgrounds when hovered over
 let box = document.querySelectorAll(".box");
@@ -39,11 +40,19 @@ boxSize.addEventListener("click", () => {
 
   newGrid();
   box = document.querySelectorAll(".box");
-  box.forEach((box) => {
-    box.addEventListener("mouseover", () => {
-      box.style["background-color"] = "black";
+  if (boxColor === "black") {
+    box.forEach((box) => {
+      box.addEventListener("mouseover", () => {
+        box.style["background-color"] = "black";
+      });
     });
-  });
+  } else {
+    box.forEach((box) => {
+      box.addEventListener("mouseover", () => {
+        box.style["background-color"] = `rgb(${rgb()}, ${rgb()}, ${rgb()})`;
+      });
+    });
+  }
 });
 
 // Clearing the sketch
@@ -57,6 +66,7 @@ clear.addEventListener("click", () => {
 // Change squares to black
 const black = document.querySelector(".black");
 black.addEventListener("click", () => {
+  boxColor = "black";
   box.forEach((box) => {
     box.addEventListener("mouseover", () => {
       box.style["background-color"] = "black";
@@ -67,6 +77,7 @@ black.addEventListener("click", () => {
 // Change squares to color
 const color = document.querySelector(".color");
 color.addEventListener("click", () => {
+  boxColor = "color";
   box.forEach((box) => {
     box.addEventListener("mouseover", () => {
       box.style["background-color"] = `rgb(${rgb()}, ${rgb()}, ${rgb()})`;
