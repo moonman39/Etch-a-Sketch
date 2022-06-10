@@ -85,6 +85,16 @@ color.addEventListener("click", () => {
   });
 });
 
+// Change mouse to an eraser
+const eraser = document.querySelector(".eraser");
+eraser.addEventListener("click", () => {
+  box.forEach((box) => {
+    box.addEventListener("mouseover", () => {
+      box.style["background-color"] = "white";
+    });
+  });
+});
+
 // A function to create new divs dependent on the user input
 const newGrid = () => {
   container.innerHTML = "";
